@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.title {
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+button {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+}
+
+.table-container,
+.calculator-container {
+  margin-top: 20px;
+}
+
+#students {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#students th,
+#students td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+#students th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+#averageGrade {
+  font-weight: bold;
+}
