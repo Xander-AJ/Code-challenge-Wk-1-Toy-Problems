@@ -4,12 +4,14 @@ document.getElementById('speedForm').addEventListener('submit', function(event) 
     const speedInput = document.getElementById('speedInput').value;
     const speed = parseInt(speedInput);
 
-    let points = 0;
-    if (speed > 70) {
-        points = Math.floor((speed - 70) / 5);
+    if (speed < 70) {
+        document.getElementById('result').textContent = 'Ok';
+        return; // Exit the function early if speed is below 70
     }
 
+    let points = Math.floor((speed - 70) / 5);
     const resultDiv = document.getElementById('result');
+
     if (points > 12) {
         resultDiv.textContent = `Points: ${points}, License suspended`;
     } else {
@@ -23,11 +25,14 @@ document.getElementById('speedForm').addEventListener('submit', function(event) 
 });
 
 // Add numbers to the speedometer
-const numbersContainer = document.getElementById('numbers');
+const numbersContainer = document.createElement('div');
+numbersContainer.classList.add('number-container');
+document.getElementById('speedometer').appendChild(numbersContainer);
+
 for (let i = 0; i <= 140; i += 10) {
     const number = document.createElement('div');
     number.classList.add('number');
-    number.style.transform = `rotate(${i}deg)`;
     number.textContent = i;
+    number.style.transform = `rotate(${i + 135}deg)`;
     numbersContainer.appendChild(number);
 }
